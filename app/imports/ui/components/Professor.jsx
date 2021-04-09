@@ -14,7 +14,11 @@ class Professor extends React.Component {
             size='mini'
             src={this.props.professor.image}
           />
-          <Card.Header>{this.props.professor.firstName} {this.props.professor.lastName}</Card.Header>
+          <Card.Header>
+            <Link to={`/edit/${this.props.professor._id}`}>
+              {this.props.professor.firstName} {this.props.professor.lastName}
+            </Link>
+          </Card.Header>
           <Card.Meta>{this.props.professor.address}</Card.Meta>
           <Card.Description>
             {this.props.professor.description}
@@ -22,9 +26,6 @@ class Professor extends React.Component {
           <Card.Description>
             <strong> Course Teaching: {this.props.professor.course} </strong>
           </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <Link to={`/edit/${this.props.professor._id}`}>Edit</Link>
         </Card.Content>
         <Card.Content extra>
           <Rating disabled icon='star' defaultRating={3} maxRating={5}/>

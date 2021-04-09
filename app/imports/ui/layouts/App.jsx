@@ -10,8 +10,8 @@ import Landing from '../pages/Landing';
 import ListProfessors from '../pages/ListProfessors';
 import ListContacts from '../pages/ListContacts';
 import AddContact from '../pages/AddContact';
-import EditContact from '../pages/EditContact';
 import NotFound from '../pages/NotFound';
+import ProfessorReview from '../pages/ProfessorReview';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
@@ -32,7 +32,7 @@ class App extends React.Component {
             <ProtectedRoute path="/listprofessor" component={ListProfessors}/>
             <ProtectedRoute path="/list" component={ListContacts}/>
             <ProtectedRoute path="/add" component={AddContact}/>
-            <ProtectedRoute path="/edit/:_id" component={EditContact}/>
+            <ProtectedRoute path="/edit/:_id" component={ProfessorReview}/>
             <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
