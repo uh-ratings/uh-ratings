@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Card, Image, Rating, Header } from 'semantic-ui-react';
+import { Grid, Loader, Card, Image, Rating, Header, Form, Button } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -23,9 +23,6 @@ class ProfessorReview extends React.Component {
               <Image size='tiny' src={this.props.professor.image} wrapped ui={false} />
               <Card.Content>
                 <Card.Header>{this.props.professor.firstName} {this.props.professor.lastName}</Card.Header>
-                <Card.Description>
-                  {this.props.professor.description}
-                </Card.Description>
               </Card.Content>
               <Card.Content extra>
                 <Rating disabled icon='star' maxRating={5} defaultRating={3}/>
@@ -34,16 +31,18 @@ class ProfessorReview extends React.Component {
           </Grid.Column>
           <Grid.Column>
             <Header as={'h2'}>{this.props.professor.course}</Header>
-            <p>Description</p>
+            <p>{this.props.professor.description}</p>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column>
-            <Header>Student</Header>
-            <Rating disabled icon='star' maxRating={5} defaultRating={4}/>
-          </Grid.Column>
-          <Grid.Column>
-            <p>Reviews</p>
+          <Grid.Column floated={'right'}>
+            <Form >
+              <Header as={'h2'}>Write a Review</Header>
+              <Rating icon={'star'} maxRating={5} defaultRating={0}/>
+              <Form.Input label={'Course'} placeholder='the course you take'/>
+              <Form.Input label={'Your review'} name={'review'} placeholder='write your review'/>
+              <Button>Submit</Button>
+            </Form>
           </Grid.Column>
         </Grid.Row>
       </Grid>
