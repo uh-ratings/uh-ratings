@@ -2,9 +2,6 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
-/**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
- */
 class NotesCollection {
   constructor() {
     // The name of this collection.
@@ -26,8 +23,4 @@ class NotesCollection {
   }
 }
 
-/**
- * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
- */
 export const Notes = new NotesCollection();

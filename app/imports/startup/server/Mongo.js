@@ -10,6 +10,7 @@ function addProfessor(data) {
   Professors.collection.insert(data);
 }
 
+
 // Initialize the ProfessorsCollection if empty.
 if (Professors.collection.find().count() === 0) {
   if (Meteor.settings.defaultProfessors) {
