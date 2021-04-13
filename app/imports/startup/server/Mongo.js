@@ -13,7 +13,7 @@ function addContact(data) {
 // Initialize the ContactsCollection if empty.
 if (Contacts.collection.find().count() === 0) {
   if (Meteor.settings.defaultContacts) {
-    console.log('Creating default Contacts.');
+    console.log('Creating default Students.');
     Meteor.settings.defaultContacts.map(data => addContact(data));
   }
 }

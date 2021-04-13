@@ -2,19 +2,19 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
-class ContactsCollection {
+class StudentsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ContactsCollection';
+    this.name = 'StudentsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       firstName: String,
       lastName: String,
-      address: String,
+      major: String,
+      year: String,
       image: String,
-      description: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
@@ -25,4 +25,4 @@ class ContactsCollection {
   }
 }
 
-export const Contacts = new ContactsCollection();
+export const Students = new StudentsCollection();
