@@ -5,3 +5,7 @@
   background-position: 50%;
   height: 500px;
 }
+
+.white-label {
+  color: white !important;
+}

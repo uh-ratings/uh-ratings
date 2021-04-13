@@ -24,18 +24,29 @@ class CourseReview extends React.Component {
     return (
       <Grid container columns={2}>
         <Grid.Column>
-          <Header as={'h2'}>{this.props.course.name}</Header>
-          <Header as={'h3'}>Teach by {this.props.course.professor}</Header>
-          <Header as={'h3'}>Semester offered: {this.props.course.semester}</Header>
-          <p>{this.props.course.description}</p>
+          <Header inverted as={'h2'}>{this.props.course.name}</Header>
+          <Header inverted as={'h4'}>Teach by {this.props.course.professor}</Header>
+          <Header inverted as={'h4'}>Semester offered: {this.props.course.semester}</Header>
+          <Header inverted as={'h4'}>{this.props.course.description}</Header>
         </Grid.Column>
         <Grid.Column>
-          <Form >
-            <Header as={'h2'}>Write a Review</Header>
-            <Rating icon={'star'} maxRating={5} defaultRating={0}/>
-            <Form.Input label={'Professor'} placeholder='the professor taught the course'/>
-            <Form.Select label={'Semester'} placeholder='the semester you took' options={options}/>
-            <Form.Input label={'Your review'} name={'review'} placeholder='write your review'/>
+          <Form>
+            <Header inverted as={'h2'}>Write a Review</Header>
+            <Form.Field>
+              <Rating size={'huge'} icon={'star'} maxRating={5} defaultRating={1}/>
+            </Form.Field>
+            <Form.Field>
+              <label className={'white-label'}>Professor</label>
+              <Form.Input placeholder='the professor taught the course'/>
+            </Form.Field>
+            <Form.Field>
+              <label className={'white-label'}>Semester</label>
+              <Form.Select placeholder='the semester you took' options={options}/>
+            </Form.Field>
+            <Form.Field>
+              <label className={'white-label'}>Your review</label>
+              <Form.Input name={'review'} placeholder='write your review'/>
+            </Form.Field>
             <Button>Submit</Button>
           </Form>
         </Grid.Column>
