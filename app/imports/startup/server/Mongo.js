@@ -1,19 +1,20 @@
 import { Meteor } from 'meteor/meteor';
-import { Contacts } from '../../api/contact/Contacts';
+import { Professors } from '../../api/professor/Professors';
 
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
 
-function addContact(data) {
+function addProfessor(data) {
   console.log(`  Adding: ${data.lastName} (${data.owner})`);
-  Contacts.collection.insert(data);
+  Professors.collection.insert(data);
 }
 
-// Initialize the ContactsCollection if empty.
-if (Contacts.collection.find().count() === 0) {
-  if (Meteor.settings.defaultContacts) {
-    console.log('Creating default Students.');
-    Meteor.settings.defaultContacts.map(data => addContact(data));
+
+// Initialize the ProfessorsCollection if empty.
+if (Professors.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProfessors) {
+    console.log('Creating default Professors.');
+    Meteor.settings.defaultProfessors.map(data => addProfessor(data));
   }
 }
