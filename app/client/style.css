@@ -2,3 +2,7 @@
   background: url('images/digits.png') no-repeat center center fixed;
   background-size: cover;
 }
+
+.uhmanoa-landing-background {
+  background: url('images/uhmanoa.png');
+}
