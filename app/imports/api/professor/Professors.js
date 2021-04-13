@@ -2,10 +2,13 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
-class ContactsCollection {
+/**
+ * The StuffsCollection. It encapsulates state and variable values for stuff.
+ */
+class ProfessorsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ContactsCollection';
+    this.name = 'ProfessorsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -15,6 +18,7 @@ class ContactsCollection {
       address: String,
       image: String,
       description: String,
+      course: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
@@ -25,4 +29,8 @@ class ContactsCollection {
   }
 }
 
-export const Contacts = new ContactsCollection();
+/**
+ * The singleton instance of the StuffsCollection.
+ * @type {ProfessorsCollection}
+ */
+export const Professors = new ProfessorsCollection();

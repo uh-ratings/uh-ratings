@@ -1,4 +1,7 @@
-.digits-landing-background {
-  background: url('images/digits.png') no-repeat center center fixed;
+.uhmanoa-landing-background {
+  background-image: url('images/keller.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50%;
+  height: 500px;
 }
