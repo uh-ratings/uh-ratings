@@ -3,7 +3,7 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
-
+  
   "defaultProfessors": [{
     "firstName": "Philip", "lastName": "Johnson", "address": "POST 307, University of Hawaii",
     "image": "https://philipmjohnson.github.io/images/philip2.jpeg", "owner": "john@foo.com",

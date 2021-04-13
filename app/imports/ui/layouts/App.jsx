@@ -7,14 +7,15 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
+import ListProfessors from '../pages/ListProfessors';
 import ListContacts from '../pages/ListContacts';
 import AddContact from '../pages/AddContact';
-import EditContact from '../pages/EditContact';
 import NotFound from '../pages/NotFound';
+import ProfessorReview from '../pages/ProfessorReview';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import AdminPage from '../pages/AdminPage';
+import ListContactsAdmin from '../pages/ListContactsAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -28,10 +29,11 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
+            <ProtectedRoute path="/listprofessor" component={ListProfessors}/>
             <ProtectedRoute path="/list" component={ListContacts}/>
             <ProtectedRoute path="/add" component={AddContact}/>
-            <ProtectedRoute path="/edit/:_id" component={EditContact}/>
-            <AdminProtectedRoute path="/admin" component={AdminPage}/>
+            <ProtectedRoute path="/edit/:_id" component={ProfessorReview}/>
+            <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
