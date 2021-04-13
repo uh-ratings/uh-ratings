@@ -1,6 +1,7 @@
 .uhmanoa-landing-background {
-  background-image: url('images/uhmanoa.png');
+  background-image: url('images/keller.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 65%;
+  background-position: 50%;
+  height: 500px;
 }
