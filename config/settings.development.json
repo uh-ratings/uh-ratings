@@ -19,5 +19,13 @@
       "image": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/kim_binsted-square-300x300.jpg", "owner": "admin@foo.com",
       "description": "Kim Binsted received her BSc in Physics at McGill (1991), and her PhD in Artificial Intelligence from the University of Edinburgh (1996). Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as What do you call a Martian who drinks beer? An ale-ien!.", "course": "ICS142, ICS241"
     }
+  ],
+
+  "defaultCourses": [{
+    "name": "ICS 111", "semester": "Spring, Fall", "professor": "Scott", "description": "basic programming course with Java", "owner": "john@foo.com"
+  },
+    {
+      "name": "ICS 314", "semester": "Spring, Fall", "professor": "Philip Johnson", "description": "software engineering with Javascript and HTML", "owner": "john@foo.com"
+    }
   ]
 }
