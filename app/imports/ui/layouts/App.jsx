@@ -15,7 +15,7 @@ import ProfessorReview from '../pages/ProfessorReview';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import ListContactsAdmin from '../pages/ListContactsAdmin';
+import AdminPage from '../pages/AdminPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -33,7 +33,7 @@ class App extends React.Component {
             <ProtectedRoute path="/list" component={ListContacts}/>
             <ProtectedRoute path="/add" component={AddContact}/>
             <ProtectedRoute path="/edit/:_id" component={ProfessorReview}/>
-            <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
+            <AdminProtectedRoute path="/admin" component={AdminPage}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
