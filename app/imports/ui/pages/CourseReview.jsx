@@ -5,6 +5,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Courses } from '../../api/course/Courses';
 
+const options = [
+  { key: 's', text: 'Spring', value: 'spring' },
+  { key: 'f', text: 'Fall', value: 'fall' },
+  { key: 'o', text: 'Other', value: 'other' },
+];
+
 /** Renders the Page for editing a single document. */
 class CourseReview extends React.Component {
 
@@ -28,7 +34,7 @@ class CourseReview extends React.Component {
             <Header as={'h2'}>Write a Review</Header>
             <Rating icon={'star'} maxRating={5} defaultRating={0}/>
             <Form.Input label={'Professor'} placeholder='the professor taught the course'/>
-            <Form.Input label={'Semester'} placeholder='the semester you took'/>
+            <Form.Select label={'Semester'} placeholder='the semester you took' options={options}/>
             <Form.Input label={'Your review'} name={'review'} placeholder='write your review'/>
             <Button>Submit</Button>
           </Form>
