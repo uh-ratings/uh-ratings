@@ -30,17 +30,25 @@ class ProfessorReview extends React.Component {
             </Card>
           </Grid.Column>
           <Grid.Column>
-            <Header as={'h2'}>{this.props.professor.course}</Header>
-            <p>{this.props.professor.description}</p>
+            <Header as={'h2'} inverted>{this.props.professor.course}</Header>
+            <Header as={'h4'} inverted>{this.props.professor.description}</Header>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column floated={'right'}>
             <Form >
-              <Header as={'h2'}>Write a Review</Header>
-              <Rating icon={'star'} maxRating={5} defaultRating={0}/>
-              <Form.Input label={'Course'} placeholder='the course you take'/>
-              <Form.Input label={'Your review'} name={'review'} placeholder='write your review'/>
+              <Header inverted as={'h2'}>Write a Review</Header>
+              <Form.Field>
+                <Rating size={'huge'} icon={'star'} maxRating={5} defaultRating={1}/>
+              </Form.Field>
+              <Form.Field>
+                <label className={'white-label'}>Course</label>
+                <Form.Input placeholder='the course you take'/>
+              </Form.Field>
+              <Form.Field>
+                <label className={'white-label'}>Your review</label>
+                <Form.Input name={'review'} placeholder='write your review'/>
+              </Form.Field>
               <Button>Submit</Button>
             </Form>
           </Grid.Column>
