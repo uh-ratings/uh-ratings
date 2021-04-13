@@ -20,14 +20,14 @@ class Home extends React.Component {
 
           <Grid.Column style={columnStyle} textAlign='center'>
             <Icon size='big' name='user' inverted/>
-            <Header as={'h3'} inverted>Professor Reviews</Header>
-            <Header as={'h4'} inverted>See what other UH students have said about the professors at UH Manoa.</Header>
+            <Header as={'h3'} inverted>Professors</Header>
+            <Header as={'h4'} inverted>See what other UH students have to say about the professors at UH Manoa.</Header>
           </Grid.Column>
 
           <Grid.Column style={columnStyle} textAlign='center'>
             <Icon size='big' name='star' inverted/>
             <Header as={'h3'} inverted>Course Reviews</Header>
-            <Header as={'h4'} inverted>See what other UH students have said about the courses offered at UH Manoa.</Header>
+            <Header as={'h4'} inverted>See what other UH students have to say about the courses offered at UH Manoa.</Header>
           </Grid.Column>
 
           <Grid.Column style={columnStyle} textAlign='center'>
@@ -39,7 +39,7 @@ class Home extends React.Component {
           <Grid.Column style={columnStyle} textAlign='center'>
             <Icon size='big' name='filter' inverted/>
             <Header as={'h3'} inverted>Filter</Header>
-            <Header as={'h4'} inverted>Filter courses and professors to find the one that suits you the best.</Header>
+            <Header as={'h4'} inverted>Filter courses and professors to find exactly what you&apos;re looking for.</Header>
           </Grid.Column>
 
         </Grid>
