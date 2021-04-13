@@ -1,4 +1,6 @@
-.digits-landing-background {
-  background: url('images/uhmanoa.png') no-repeat center center fixed;
+.uhmanoa-landing-background {
+  background-image: url('images/uhmanoa.png');
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 65%;
 }
