@@ -15,6 +15,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
+import Home from '../pages/Home';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -28,6 +29,7 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
+            <ProtectedRoute path="/home" component={Home}/>
             <ProtectedRoute path="/list" component={ListContacts}/>
             <ProtectedRoute path="/add" component={AddContact}/>
             <ProtectedRoute path="/edit/:_id" component={EditContact}/>
