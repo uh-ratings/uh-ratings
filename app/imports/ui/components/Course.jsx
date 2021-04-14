@@ -16,6 +16,8 @@ class Course extends React.Component {
           </Card.Header>
           <Card.Meta>Teach by {this.props.course.professor}</Card.Meta>
           <Card.Meta>Semester offered: {this.props.course.semester}</Card.Meta>
+          <Card.Meta>Cost: {this.props.course.cost}</Card.Meta>
+          <Card.Meta>Average time per week: {this.props.course.averagetime}</Card.Meta>
           <Card.Description>
             {this.props.course.description}
           </Card.Description>

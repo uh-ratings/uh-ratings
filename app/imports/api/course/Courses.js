@@ -14,9 +14,11 @@ class CoursesCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      description: String,
-      professor: String,
       semester: String,
+      professor: String,
+      description: String,
+      cost: Number,
+      averagetime: Number,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
