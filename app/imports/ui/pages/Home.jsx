@@ -4,19 +4,19 @@ import { Grid, Header, Icon } from 'semantic-ui-react';
 /** A simple static component to render some text for the landing page. */
 class Home extends React.Component {
   render() {
-    const headerStyle = { backgroundColor: 'rgba(2, 71, 49, 0.7)' };
-    const columnStyle = { marginTop: '125px', backgroundColor: 'rgba(2, 71, 49, 0.7)' };
+    const headerStyle = { paddingTop: '25px', paddingBottom: '25px', backgroundColor: 'rgba(2, 71, 49, 0.7)' };
+    const columnStyle = { backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     return (
-      <div className="uhmanoa-landing-background">
-
-        <div>
-          <Header as='h1' style={headerStyle} icon textAlign='center' inverted>
-            <Header.Content>WELCOME TO UH-RATINGS</Header.Content>
-            <Header.Subheader>Click a link at the top left to get started</Header.Subheader>
-          </Header>
-        </div>
+      <div className="uhmanoa-home-background">
 
         <Grid container centered stackable columns={4}>
+
+          <Grid.Row>
+            <Header as='h1' style={headerStyle} icon textAlign='center' inverted>
+              <Header.Content>WELCOME TO UH-RATINGS</Header.Content>
+              <Header.Subheader>Click a tab at the top left to get started</Header.Subheader>
+            </Header>
+          </Grid.Row>
 
           <Grid.Column style={columnStyle} textAlign='center'>
             <Icon size='big' name='user' inverted/>
