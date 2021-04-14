@@ -4,7 +4,7 @@ import { Grid, Header, Icon } from 'semantic-ui-react';
 /** A simple static component to render some text for the landing page. */
 class Home extends React.Component {
   render() {
-    const headerStyle = { paddingTop: '25px', paddingBottom: '25px', backgroundColor: 'rgba(2, 71, 49, 0.7)' };
+    const headerStyle = { paddingTop: '25px', paddingBottom: '25px', paddingLeft: '100px', paddingRight: '100px', backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     const columnStyle = { backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     return (
       <div className="uhmanoa-home-background">
