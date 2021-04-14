@@ -22,10 +22,10 @@
   ],
 
   "defaultCourses": [{
-    "name": "ICS 111", "semester": "Spring, Fall", "professor": "Scott", "description": "basic programming course with Java", "owner": "john@foo.com"
+    "name": "ICS 111", "semester": "Spring, Fall", "professor": "Scott", "description": "basic programming course with Java", "cost": "1200", "averagetime": "5", "owner": "john@foo.com"
   },
     {
-      "name": "ICS 314", "semester": "Spring, Fall", "professor": "Philip Johnson", "description": "software engineering with Javascript and HTML", "owner": "john@foo.com"
+      "name": "ICS 314", "semester": "Spring, Fall", "professor": "Philip Johnson", "description": "software engineering with Javascript and HTML", "cost": "1200", "averagetime": "10","owner": "john@foo.com"
     }
   ]
 }
