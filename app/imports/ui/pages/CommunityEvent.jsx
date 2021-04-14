@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Image } from 'semantic-ui-react';
+import { Grid, Header } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class CommunityEvent extends React.Component {
@@ -7,7 +7,7 @@ class CommunityEvent extends React.Component {
     const headerStyle = { paddingTop: '25px', paddingBottom: '25px', paddingLeft: '100px', paddingRight: '100px', backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     const columnStyle = { backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     return (
-      <div className="uhmanoa-home-background">
+      <div className="uhmanoa-event-background">
 
         <Grid container centered stackable columns={4}>
 
