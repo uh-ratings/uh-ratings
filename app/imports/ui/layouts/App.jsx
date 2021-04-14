@@ -15,7 +15,7 @@ import ProfessorReview from '../pages/ProfessorReview';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import ListContactsAdmin from '../pages/ListContactsAdmin';
+import AdminPage from '../pages/AdminPage';
 import CourseReview from '../pages/CourseReview';
 import Home from '../pages/Home';
 import CommunityEvent from '../pages/CommunityEvent';
@@ -39,7 +39,7 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddContact}/>
             <ProtectedRoute path="/professor/:_id" component={ProfessorReview}/>
             <ProtectedRoute path="/course/:_id" component={CourseReview}/>
-            <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
+            <AdminProtectedRoute path="/admin" component={AdminPage}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
