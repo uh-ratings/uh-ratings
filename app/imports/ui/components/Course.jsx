@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -9,19 +9,21 @@ class Course extends React.Component {
     return (
       <Card centered>
         <Card.Content>
-          <Image
-            floated='right'
-            size='mini'
-            src={this.props.course.image}
-          />
-          <Card.Header>{this.props.course.firstName} {this.props.course.lastName}</Card.Header>
-          <Card.Meta>{this.props.course.address}</Card.Meta>
+          <Card.Header>
+            <Link to={`/course/${this.props.course._id}`}>
+              {this.props.course.name}
+            </Link>
+          </Card.Header>
+          <Card.Meta>Teach by {this.props.course.professor}</Card.Meta>
+          <Card.Meta>Semester offered: {this.props.course.semester}</Card.Meta>
+          <Card.Meta>Cost: {this.props.course.cost}</Card.Meta>
+          <Card.Meta>Average time per week: {this.props.course.averagetime}</Card.Meta>
           <Card.Description>
             {this.props.course.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Link to={`/edit/${this.props.course._id}`}>Edit</Link>
+          <Rating disabled icon='star' defaultRating={3} maxRating={5}/>
         </Card.Content>
       </Card>
     );

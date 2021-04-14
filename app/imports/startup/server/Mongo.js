@@ -1,32 +1,32 @@
 import { Meteor } from 'meteor/meteor';
-import { Contacts } from '../../api/contact/Contacts';
-import { Course } from '../../api/course/Course';
+import { Professors } from '../../api/professor/Professors';
+import { Courses } from '../../api/course/Courses';
 
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
 
-function addContact(data) {
+function addProfessor(data) {
   console.log(`  Adding: ${data.lastName} (${data.owner})`);
-  Contacts.collection.insert(data);
+  Professors.collection.insert(data);
 }
 
 function addCourse(data) {
-  console.log(`  Adding: ${data.semester} (${data.owner})`);
-  Course.collection.insert(data);
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Courses.collection.insert(data);
 }
 
-// Initialize the ContactsCollection if empty.
-if (Contacts.collection.find().count() === 0) {
-  if (Meteor.settings.defaultContacts) {
-    console.log('Creating default Contacts.');
-    Meteor.settings.defaultContacts.map(data => addContact(data));
+// Initialize the ProfessorsCollection if empty.
+if (Professors.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProfessors) {
+    console.log('Creating default Professors.');
+    Meteor.settings.defaultProfessors.map(data => addProfessor(data));
   }
 }
 
-if (Course.collection.find().count() === 0) {
-  if (Meteor.settings.defaultCourse) {
+if (Courses.collection.find().count() === 0) {
+  if (Meteor.settings.defaultCourses) {
     console.log('Creating default Courses.');
-    Meteor.settings.defaultCourse.map(data => addCourse(data));
+    Meteor.settings.defaultCourses.map(data => addCourse(data));
   }
 }

@@ -7,15 +7,18 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListContacts from '../pages/ListContacts';
+import ListProfessors from '../pages/ListProfessors';
+import ListCourses from '../pages/ListCourses';
 import AddContact from '../pages/AddContact';
-import AddCourse from '../pages/AddCourse';
-import EditContact from '../pages/EditContact';
 import NotFound from '../pages/NotFound';
+import ProfessorReview from '../pages/ProfessorReview';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ListContactsAdmin from '../pages/ListContactsAdmin';
+import CourseReview from '../pages/CourseReview';
+import Home from '../pages/Home';
+import CommunityEvent from '../pages/CommunityEvent';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -29,10 +32,13 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <ProtectedRoute path="/list" component={ListContacts}/>
+            <Route path="/event" component={CommunityEvent}/>
+            <ProtectedRoute path="/home" component={Home}/>
+            <ProtectedRoute path="/listprofessor" component={ListProfessors}/>
+            <ProtectedRoute path="/listcourse" component={ListCourses}/>
             <ProtectedRoute path="/add" component={AddContact}/>
-            <ProtectedRoute path="/add2" component={AddCourse}/>
-            <ProtectedRoute path="/edit/:_id" component={EditContact}/>
+            <ProtectedRoute path="/professor/:_id" component={ProfessorReview}/>
+            <ProtectedRoute path="/course/:_id" component={CourseReview}/>
             <AdminProtectedRoute path="/admin" component={ListContactsAdmin}/>
             <Route component={NotFound}/>
           </Switch>
