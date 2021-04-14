@@ -32,6 +32,13 @@ Meteor.publish(Professors.adminPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Courses.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Courses.collection.find();
+  }
+  return this.ready();
+});
+
 // alanning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {

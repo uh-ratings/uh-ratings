@@ -26,12 +26,9 @@
   },
     {
       "name": "ICS 314", "semester": "Spring, Fall", "professor": "Philip Johnson", "description": "software engineering with Javascript and HTML", "cost": "1200", "averagetime": "10","owner": "john@foo.com"
+    },
+  {
+    "semester": "Spring 2021", "name": "ICS314", "professor": "Philip Johnson", "ratings": "5", "owner": "admin@foo.com", "description": "He is a Professor of Information and Computer Sciences at the University of Hawaii, Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.", "cost": "1200", "averagetime": "10"
     }
-  ],
-  "defaultCourse": [{
-    "semester": "Spring 2021", "classname": "ICS314", "professor": "Philip Johnson",
-    "ratings": "5", "owner": "admin@foo.com",
-    "description": "He is a Professor of Information and Computer Sciences at the University of Hawaii, Director of the Collaborative Software Development Laboratory, and the CEO of OpenPowerQuality.com.", "cost": "1200", "averagetime": "10"
-  }
   ]
 }
