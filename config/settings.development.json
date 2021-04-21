@@ -31,6 +31,7 @@
     "semester": "Spring 2021", "name": "ICS314", "professor": "Philip Johnson", "ratings": "5", "owner": "admin@foo.com", "description": "software engineering with Javascript and HTML", "cost": "1200", "averagetime": "10"
     }
   ],
+
   "monti": {
     "appId": "tYdwazFBv6X3JPXEc",
     "appSecret": "617ea3fe-ea85-4982-848c-e69ba194de6e"
