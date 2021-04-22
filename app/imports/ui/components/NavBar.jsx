@@ -12,12 +12,12 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '10px', backgroundColor: '#024731' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/#">
+        <Menu.Item as={NavLink} activeClassName="" exact to="/home">
           <Header inverted as='h1'>UH Ratings</Header>
         </Menu.Item>
         <Menu.Item as={NavLink} activeClassName="active" exact to="/event" key='event'>Community Events</Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="" exact to="/home" key='home'><Header inverted as='h1'>UH Ratings</Header></Menu.Item>,
+          [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/listprofessor" key='listprofessor'>Professors</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/listcourse" key='listcourse'>Courses</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Course Review</Menu.Item>,
