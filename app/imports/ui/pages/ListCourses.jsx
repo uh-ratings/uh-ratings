@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Course from '../components/Course';
 import { Courses } from '../../api/course/Courses';
+import { Reviews } from '../../api/review/Reviews';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListCourses extends React.Component {
@@ -20,7 +21,7 @@ class ListCourses extends React.Component {
       <Container>
         <Header as="h2" textAlign="center" inverted>List Courses</Header>
         <Card.Group>
-          {this.props.courses.map((course, index) => <Course key={index} course={course}/>)}
+          {this.props.courses.map((course, index) => <Course key={index} course={course} reviews={this.props.reviews.filter(review => (review.contactId === course._id))}/>)}
         </Card.Group>
       </Container>
     );
@@ -30,6 +31,7 @@ class ListCourses extends React.Component {
 // Require an array of Stuff documents in the props.
 ListCourses.propTypes = {
   courses: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -37,12 +39,15 @@ ListCourses.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Courses.userPublicationName);
+  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready();
+  const ready = subscription.ready() && subscription2.ready();
   // Get the Stuff documents
   const courses = Courses.collection.find({}).fetch();
+  const reviews = Reviews.collection.find({}).fetch();
   return {
     courses,
+    reviews,
     ready,
   };
 })(ListCourses);

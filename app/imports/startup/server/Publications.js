@@ -9,16 +9,14 @@ import { Reviews } from '../../api/review/Reviews';
 
 Meteor.publish(Professors.userPublicationName, function () {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Professors.collection.find({ owner: username });
+    return Professors.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Courses.userPublicationName, function () {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Courses.collection.find({ owner: username });
+    return Courses.collection.find();
   }
   return this.ready();
 });

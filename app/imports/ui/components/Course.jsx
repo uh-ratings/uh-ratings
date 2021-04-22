@@ -6,6 +6,14 @@ import { withRouter, Link } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Course extends React.Component {
   render() {
+    const revArr = this.props.reviews;
+    let rate;
+    if (revArr.length !== 0) {
+      const total = revArr.reduce((a, b) => ({ rating: a.rating + b.rating }));
+      rate = total.rating / revArr.length;
+    } else {
+      rate = 3;
+    }
     return (
       <Card centered>
         <Card.Content>
@@ -23,7 +31,7 @@ class Course extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <Rating disabled icon='star' defaultRating={3} maxRating={5}/>
+          <Rating disabled icon='star' defaultRating={rate} maxRating={5}/>
         </Card.Content>
       </Card>
     );
@@ -33,6 +41,7 @@ class Course extends React.Component {
 // Require a document to be passed to this component.
 Course.propTypes = {
   course: PropTypes.object.isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
