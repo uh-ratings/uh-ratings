@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Icon } from 'semantic-ui-react';
+import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
@@ -20,10 +20,8 @@ class NavBar extends React.Component {
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/listprofessor" key='listprofessor'>Professors</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/listcourse" key='listcourse'>Courses</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Course Review</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/editposts" key='editposts'>
-              Edit Posts-
-              <Icon name={'edit'}/>
+              My Posts
             </Menu.Item>,
           ]
         ) : ''}

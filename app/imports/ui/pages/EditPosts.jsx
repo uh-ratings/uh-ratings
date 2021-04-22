@@ -1,31 +1,15 @@
 import React from 'react';
 import { Loader, Header, Container, Card } from 'semantic-ui-react';
-import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Courses } from '../../api/course/Courses';
 import { Professors } from '../../api/professor/Professors';
 import Professor from '../components/Professor';
 import Course from '../components/Course';
 
-const bridge = new SimpleSchema2Bridge(Courses.schema);
-const bridge2 = new SimpleSchema2Bridge(Professors.schema);
-
 /** Renders the Page for editing a single document. */
 class EditPosts extends React.Component {
-
-  // On successful submit, insert the data.
-  submit(data) {
-    const { semester, name, professor, ratings, description, cost, averagetime, firstName, lastName, address, image, course, _id } = data;
-    Courses.collection.update(_id, { $set: { semester, name, professor, ratings, description, cost, averagetime } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
-    Professors.collection.update(_id, { $set: { firstName, lastName, address, ratings, description, image, course } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
-  }
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
@@ -36,7 +20,7 @@ class EditPosts extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>Edit Posts</Header>
+        <Header as="h2" textAlign="center" inverted>My Posts</Header>
         <hr></hr>
         <Header as="h3" textAlign="center" inverted>Professors</Header>
         <Card.Group>
