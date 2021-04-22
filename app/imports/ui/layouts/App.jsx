@@ -17,6 +17,7 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import AdminPage from '../pages/AdminPage';
 import CourseReview from '../pages/CourseReview';
+import EditPosts from '../pages/EditPosts';
 import Home from '../pages/Home';
 import CommunityEvent from '../pages/CommunityEvent';
 
@@ -36,9 +37,10 @@ class App extends React.Component {
             <ProtectedRoute path="/home" component={Home}/>
             <ProtectedRoute path="/listprofessor" component={ListProfessors}/>
             <ProtectedRoute path="/listcourse" component={ListCourses}/>
-            <ProtectedRoute path="/add" component={AddCourse}/>
+            <AdminProtectedRoute path="/add" component={AddCourse}/>
             <ProtectedRoute path="/professor/:_id" component={ProfessorReview}/>
             <ProtectedRoute path="/course/:_id" component={CourseReview}/>
+            <ProtectedRoute path="/editposts" component={EditPosts}/>
             <AdminProtectedRoute path="/admin" component={AdminPage}/>
             <Route component={NotFound}/>
           </Switch>
