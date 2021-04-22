@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Professor from '../components/Professor';
 import { Professors } from '../../api/professor/Professors';
+import { Reviews } from '../../api/review/Reviews';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListProfessors extends React.Component {
@@ -20,7 +21,7 @@ class ListProfessors extends React.Component {
       <Container>
         <Header as="h2" textAlign="center" inverted>List Professors</Header>
         <Card.Group>
-          {this.props.professors.map((professor, index) => <Professor key={index} professor={professor} />)}
+          {this.props.professors.map((professor, index) => <Professor key={index} professor={professor} reviews={this.props.reviews.filter(review => (review.contactId === professor._id))}/>)}
         </Card.Group>
       </Container>
     );
@@ -30,6 +31,7 @@ class ListProfessors extends React.Component {
 // Require an array of Stuff documents in the props.
 ListProfessors.propTypes = {
   professors: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -37,12 +39,15 @@ ListProfessors.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Professors.userPublicationName);
+  const subscription2 = Meteor.subscribe(Reviews.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready();
+  const ready = subscription.ready() && subscription2.ready();
   // Get the Stuff documents
   const professors = Professors.collection.find({}).fetch();
+  const reviews = Reviews.collection.find({}).fetch();
   return {
     professors,
+    reviews,
     ready,
   };
 })(ListProfessors);
