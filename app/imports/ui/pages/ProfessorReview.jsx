@@ -19,8 +19,13 @@ class ProfessorReview extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     const arr = this.props.reviews.filter(review => review.contactId === this.props.professor._id);
-    const total = arr.reduce((a, b) => ({ rating: a.rating + b.rating }));
-    const rate = total.rating / arr.length;
+    let rate;
+    if (arr.length !== 0) {
+      const total = arr.reduce((a, b) => ({ rating: a.rating + b.rating }));
+      rate = total.rating / arr.length;
+    } else {
+      rate = 3;
+    }
     return (
       <Grid container columns={3}>
         <Grid.Column width={4}>

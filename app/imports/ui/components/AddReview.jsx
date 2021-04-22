@@ -31,9 +31,9 @@ class AddReview extends React.Component {
     return (
       <AutoForm placeholder={true} ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
-          <Header>Review for this professor</Header>
+          <Header>Write Reviews</Header>
           <NumField decimal={false} max={5} min={1} placeholder="Rating from 1 to 5" label="Star Rating" name='rating'/>
-          <TextField placeholder="Review for this professor" label="Write a Review" name='review'/>
+          <TextField placeholder="Review for this professor" label="Write Your Review" name='review'/>
           <SubmitField value='Submit'/>
           <ErrorsField/>
           <HiddenField name='contactId' value={this.props.contactId}/>
