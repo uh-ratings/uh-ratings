@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
+import AddProfessor from '../pages/AddProfessor';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -26,7 +27,8 @@ class NavBar extends React.Component {
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Course Review</Menu.Item>,
+          [<Menu.Item as={NavLink} activeClassName="active" exact to="/addcourse" key='addcourse'>Add Course Review</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/addprofessor" key='addprofessor'>Add Professor Review</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>]
         ) : ''}
         <Menu.Item position="right">

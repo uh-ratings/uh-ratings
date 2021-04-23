@@ -10,6 +10,7 @@ import Landing from '../pages/Landing';
 import ListProfessors from '../pages/ListProfessors';
 import ListCourses from '../pages/ListCourses';
 import AddCourse from '../pages/AddCourse';
+import AddProfessor from '../pages/AddProfessor';
 import NotFound from '../pages/NotFound';
 import ProfessorReview from '../pages/ProfessorReview';
 import Signin from '../pages/Signin';
@@ -37,7 +38,8 @@ class App extends React.Component {
             <ProtectedRoute path="/home" component={Home}/>
             <ProtectedRoute path="/listprofessor" component={ListProfessors}/>
             <ProtectedRoute path="/listcourse" component={ListCourses}/>
-            <AdminProtectedRoute path="/add" component={AddCourse}/>
+            <ProtectedRoute path="/addcourse" component={AddCourse}/>
+            <ProtectedRoute path="/addprofessor" component={AddProfessor}/>
             <ProtectedRoute path="/professor/:_id" component={ProfessorReview}/>
             <ProtectedRoute path="/course/:_id" component={CourseReview}/>
             <ProtectedRoute path="/editposts" component={EditPosts}/>
