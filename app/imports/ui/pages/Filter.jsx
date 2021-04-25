@@ -1,11 +1,17 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Button, Form, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Professor from '../components/Professor';
 import { Professors } from '../../api/professor/Professors';
 import { Reviews } from '../../api/review/Reviews';
+
+const semester = [
+  { key: 'fall', text: 'Fall', value: 'fall' },
+  { key: 'spring', text: 'Spring', value: 'spring' },
+  { key: 'summer', text: 'Summer', value: 'summer' },
+];
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class Filter extends React.Component {
@@ -19,10 +25,20 @@ class Filter extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>Filter</Header>
-        <Card.Group>
-          {this.props.professors.map((professor, index) => <Professor key={index} professor={professor} reviews={this.props.reviews.filter(review => (review.contactId === professor._id))}/>)}
-        </Card.Group>
+        <Segment inverted>
+          <Form inverted>
+            <Form.Group widths='equal'>
+              <Form.Select fluid label='Professor' placeholder='Professor' />
+            </Form.Group>
+            <Form.Group widths='equal'>
+              <Form.Select fluid label='Semester' placeholder='Semester' options={semester}/>
+            </Form.Group>
+            <Form.Group widths='equal'>
+              <Form.Select fluid label='Course' placeholder='Course' />
+            </Form.Group>
+            <Button type='submit'>Submit</Button>
+          </Form>
+        </Segment>
       </Container>
     );
   }
