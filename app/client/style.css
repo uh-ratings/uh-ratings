@@ -16,8 +16,8 @@
 }
 
 .uhmanoa-event-background {
-  background-image: url('images/johnsonhall.jpg');
-  height: 1100px;
+  text-align: center;
+  background-color: white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,4 +26,28 @@
 
 .white-label {
   color: white !important;
+}
+
+.App {
+  text-align: center;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
 }
