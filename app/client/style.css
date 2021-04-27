@@ -42,9 +42,9 @@
   position: relative;
 }
 
-.uhmanoa-addcourse-background {
-  background-image: url('images/post-building.jpg');
-  height: 600px;
+.uhmanoa-editposts-background {
+  background-image: url('images/campus.jpg');
+  height: 1000px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

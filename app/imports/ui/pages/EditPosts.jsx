@@ -19,19 +19,21 @@ class EditPosts extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     return (
-      <Container>
-        <Header as="h2" textAlign="center" inverted>My Posts</Header>
-        <hr></hr>
-        <Header as="h3" textAlign="center" inverted>Professors</Header>
-        <Card.Group>
-          {this.props.professors.map((professor, index, review) => <Professor key={index} professor={professor} reviews={review}/>)}
-        </Card.Group>
-        <hr></hr>
-        <Header as="h3" textAlign="center" inverted>Courses</Header>
-        <Card.Group>
-          {this.props.courses.map((course, index, review) => <Course key={index} course={course} reviews={review}/>)}
-        </Card.Group>
-      </Container>
+      <div className='uhmanoa-editposts-background'>
+        <Container>
+          <Header as="h2" textAlign="center" inverted>My Posts</Header>
+          <hr></hr>
+          <Header as="h3" textAlign="center" inverted>Professors</Header>
+          <Card.Group>
+            {this.props.professors.map((professor, index, review) => <Professor key={index} professor={professor} reviews={review}/>)}
+          </Card.Group>
+          <hr></hr>
+          <Header as="h3" textAlign="center" inverted>Courses</Header>
+          <Card.Group>
+            {this.props.courses.map((course, index, review) => <Course key={index} course={course} reviews={review}/>)}
+          </Card.Group>
+        </Container>
+      </div>
     );
   }
 }
