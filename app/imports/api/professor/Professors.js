@@ -29,7 +29,7 @@ class ProfessorsCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the ProfessorsCollection.
  * @type {ProfessorsCollection}
  */
 export const Professors = new ProfessorsCollection();

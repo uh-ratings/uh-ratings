@@ -1,10 +1,15 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { Professors } from '../../api/professor/Professors';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Admin extends React.Component {
+  removeItem(docID) {
+    Professors.collection.remove(docID);
+  }
+
   render() {
     return (
       <Card centered>
@@ -21,7 +26,7 @@ class Admin extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          {this.props.professor.owner}
+          <Button icon='trash' onClick={ () => this.removeItem(this.props.professor._id)}/>
         </Card.Content>
       </Card>
     );
