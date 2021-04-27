@@ -24,12 +24,12 @@ class EditPosts extends React.Component {
         <hr></hr>
         <Header as="h3" textAlign="center" inverted>Professors</Header>
         <Card.Group>
-          {this.props.professors.map((professor, index) => <Professor key={index} professor={professor}/>)}
+          {this.props.professors.map((professor, index, review) => <Professor key={index} professor={professor} reviews={review}/>)}
         </Card.Group>
         <hr></hr>
         <Header as="h3" textAlign="center" inverted>Courses</Header>
         <Card.Group>
-          {this.props.courses.map((course, index) => <Course key={index} course={course}/>)}
+          {this.props.courses.map((course, index, review) => <Course key={index} course={course} reviews={review}/>)}
         </Card.Group>
       </Container>
     );
@@ -38,8 +38,6 @@ class EditPosts extends React.Component {
 
 // Require the presence of a Contact document in the props object. Uniforms adds 'model' to the props, which we use.
 EditPosts.propTypes = {
-  doc: PropTypes.object,
-  doc2: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
   courses: PropTypes.array.isRequired,
@@ -47,24 +45,16 @@ EditPosts.propTypes = {
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-export default withTracker(({ match }) => {
+export default withTracker(() => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const documentId = match.params._id;
   // Get access to Contact documents.
   const subscription = Meteor.subscribe(Courses.userPublicationName);
   const subscription2 = Meteor.subscribe(Professors.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
-  // Get the document
-  const doc = Courses.collection.findOne(documentId);
-  const doc2 = Professors.collection.findOne(documentId);
-  const courses = Courses.collection.find({}).fetch();
-  const professors = Professors.collection.find({}).fetch();
   return {
-    doc,
-    doc2,
-    courses,
-    professors,
+    courses: Courses.collection.find({}).fetch(),
+    professors: Professors.collection.find({}).fetch(),
     ready,
   };
 })(EditPosts);
