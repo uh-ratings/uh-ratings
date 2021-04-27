@@ -1,10 +1,14 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Button, Card, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class AdminCourses extends React.Component {
+  removeItem(docID) {
+    this.props.Courses.collection.remove(docID);
+  }
+
   render() {
     return (
       <Card centered>
@@ -21,6 +25,11 @@ class AdminCourses extends React.Component {
         <Card.Content extra>
         Time: {this.props.course.averagetime}
         </Card.Content>
+        <Card.Content extra>
+          <Button icon onClick={ () => this.removeItem(this.props.course._id)}>
+            <Icon name='trash' />
+          </Button>
+        </Card.Content>
       </Card>
     );
   }
@@ -28,7 +37,16 @@ class AdminCourses extends React.Component {
 
 // Require a document to be passed to this component.
 AdminCourses.propTypes = {
-  course: PropTypes.object.isRequired,
+  course: PropTypes.shape({
+    name: PropTypes.string,
+    cost: PropTypes.number,
+    semester: PropTypes.string,
+    description: PropTypes.string,
+    professor: PropTypes.string,
+    averagetime: PropTypes.number,
+    _id: PropTypes.string,
+  }).isRequired,
+  Courses: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
