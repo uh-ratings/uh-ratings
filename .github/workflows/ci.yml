@@ -3,7 +3,7 @@ name: ci-uh-ratings
 on:
   push:
     branches:
-      - master
+      - main
 
 defaults:
   run:
@@ -36,4 +36,3 @@ jobs:
       - run: meteor npm run lint
       - run: meteor npm run test-unit
       - run: meteor npm run testcafe-ci
-          echo test, and deploy your project.
