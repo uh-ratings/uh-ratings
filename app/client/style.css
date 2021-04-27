@@ -26,9 +26,29 @@
 
 .uhmanoa-professors-background {
   background-image: url('images/post-building.jpg');
+  height: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.uhmanoa-listcourses-background {
+  background-image: url('images/hamilton.jpg');
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.uhmanoa-addcourse-background {
+  background-image: url('images/post-building.jpg');
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .white-label {

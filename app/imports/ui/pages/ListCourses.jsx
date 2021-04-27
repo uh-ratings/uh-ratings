@@ -18,12 +18,14 @@ class ListCourses extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
-        <Header as="h2" textAlign="center" inverted>List Courses</Header>
-        <Card.Group>
-          {this.props.courses.map((course, index) => <Course key={index} course={course} reviews={this.props.reviews.filter(review => (review.contactId === course._id))}/>)}
-        </Card.Group>
-      </Container>
+      <div className="uhmanoa-listcourses-background">
+        <Container>
+          <Header as="h2" textAlign="center" inverted>List Courses</Header>
+          <Card.Group>
+            {this.props.courses.map((course, index) => <Course key={index} course={course} reviews={this.props.reviews.filter(review => (review.contactId === course._id))}/>)}
+          </Card.Group>
+        </Container>
+      </div>
     );
   }
 }
