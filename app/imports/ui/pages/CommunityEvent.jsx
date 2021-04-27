@@ -13,16 +13,16 @@ class CommunityEvent extends React.Component {
       {
         start: moment().toDate(),
         end: moment()
-          .add(1, 'days')
+          .add(5, 'days')
           .toDate(),
-        title: 'Event 1',
+        title: 'Job Fair',
       },
       {
         start: moment().toDate(),
         end: moment()
           .add(2, 'days')
           .toDate(),
-        title: 'Event 2',
+        title: 'Community Fundraiser',
       },
     ],
   };
