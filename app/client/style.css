@@ -24,6 +24,13 @@
   position: relative;
 }
 
+.uhmanoa-professors-background {
+  background-image: url('images/post-building.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .white-label {
   color: white !important;
 }

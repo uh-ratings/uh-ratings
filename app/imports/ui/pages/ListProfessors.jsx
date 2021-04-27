@@ -18,12 +18,14 @@ class ListProfessors extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
-        <Header as="h2" textAlign="center" inverted>List Professors</Header>
-        <Card.Group>
-          {this.props.professors.map((professor, index) => <Professor key={index} professor={professor} reviews={this.props.reviews.filter(review => (review.contactId === professor._id))}/>)}
-        </Card.Group>
-      </Container>
+      <div className="uhmanoa-professors-background">
+        <Container>
+          <Header as="h2" textAlign="center" inverted>List Professors</Header>
+          <Card.Group>
+            {this.props.professors.map((professor, index) => <Professor key={index} professor={professor} reviews={this.props.reviews.filter(review => (review.contactId === professor._id))}/>)}
+          </Card.Group>
+        </Container>
+      </div>
     );
   }
 }
