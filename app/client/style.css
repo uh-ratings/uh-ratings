@@ -51,6 +51,15 @@
   position: relative;
 }
 
+.uhmanoa-signin-background {
+  background-image: url('images/uhlawn.jpg');
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .white-label {
   color: white !important;
 }
