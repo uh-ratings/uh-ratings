@@ -21,7 +21,7 @@ import CourseReview from '../pages/CourseReview';
 import EditPosts from '../pages/EditPosts';
 import Home from '../pages/Home';
 import CommunityEvent from '../pages/CommunityEvent';
-import Filter from '../pages/Filter';
+
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -44,7 +44,6 @@ class App extends React.Component {
             <ProtectedRoute path="/professor/:_id" component={ProfessorReview}/>
             <ProtectedRoute path="/course/:_id" component={CourseReview}/>
             <ProtectedRoute path="/editposts" component={EditPosts}/>
-            <ProtectedRoute path="/filter" component={Filter}/>
             <AdminProtectedRoute path="/admin" component={AdminPage}/>
             <Route component={NotFound}/>
           </Switch>

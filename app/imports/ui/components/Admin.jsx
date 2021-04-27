@@ -26,9 +26,6 @@ class Admin extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          {this.props.professor.owner}
-        </Card.Content>
-        <Card.Content extra>
           <Button icon='trash' onClick={ () => this.removeItem(this.props.professor._id)}/>
         </Card.Content>
       </Card>
