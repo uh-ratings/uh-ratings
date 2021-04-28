@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div className="uhmanoa-home-background" id='landing-page'>
 
-        <Grid container centered stackable columns={4}>
+        <Grid container centered stackable columns={3}>
 
           <Grid.Row>
             <Header as='h1' style={headerStyle} icon textAlign='center' inverted>
@@ -36,12 +36,6 @@ class Home extends React.Component {
             <Icon size='big' name='users' inverted/>
             <Header as={'h3'} inverted>Community Events</Header>
             <Header as={'h4'} inverted>Find out recent events happening in the UH community.</Header>
-          </Grid.Column>
-
-          <Grid.Column style={columnStyle} textAlign='center'>
-            <Icon size='big' name='filter' inverted/>
-            <Header as={'h3'} inverted>Filter</Header>
-            <Header as={'h4'} inverted>Filter courses and professors to find exactly what you&apos;re looking for.</Header>
           </Grid.Column>
 
         </Grid>
