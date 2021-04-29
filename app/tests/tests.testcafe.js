@@ -34,7 +34,7 @@ test('Test that home page shows up after login', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test.only('Test that event page shows up without login', async (testController) => {
+test('Test that event page shows up without login', async (testController) => {
   await navBar.ensureLogout(testController);
   await navBar.gotoEventPage(testController);
   await eventPage.isDisplayed(testController);
