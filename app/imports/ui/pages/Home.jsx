@@ -7,7 +7,7 @@ class Home extends React.Component {
     const headerStyle = { paddingTop: '25px', paddingBottom: '25px', paddingLeft: '100px', paddingRight: '100px', backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     const columnStyle = { backgroundColor: 'rgba(2, 71, 49, 0.7)' };
     return (
-      <div className="uhmanoa-home-background">
+      <div className="uhmanoa-home-background" id="home-page">
 
         <Grid container centered stackable columns={4}>
 
