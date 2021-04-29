@@ -21,6 +21,10 @@ class NavBar {
     await testController.click('#goto-event-page');
   }
 
+  async gotoProfessorReviewPage(testController) {
+    await testController.click('#prof-review-page');
+  }
+
   /** Check that the specified user is currently logged in. */
   async isLoggedIn(testController, username) {
     const loggedInUser = Selector('#navbar-current-user').innerText;

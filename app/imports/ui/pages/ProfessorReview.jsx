@@ -27,42 +27,44 @@ class ProfessorReview extends React.Component {
       rate = 3;
     }
     return (
-      <Grid container columns={3}>
-        <Grid.Column width={4}>
-          <Grid.Column>
-            <Card>
-              <Image size='tiny' src={this.props.professor.image} wrapped ui={false}/>
+      <div className="uhmanoa-professorreview-background" id="professor-review">
+        <Grid container columns={3}>
+          <Grid.Column width={4}>
+            <Grid.Column>
+              <Card>
+                <Image size='tiny' src={this.props.professor.image} wrapped ui={false}/>
+                <Card.Content>
+                  <Card.Header>{this.props.professor.firstName} {this.props.professor.lastName}</Card.Header>
+                </Card.Content>
+                <Card.Content extra>
+                  <Rating disabled icon='star' maxRating={5} defaultRating={rate}/>
+                </Card.Content>
+              </Card>
+              <AddReview contactId={this.props.professor._id}/>
+            </Grid.Column>
+          </Grid.Column>
+          <Grid.Column width={2}>
+            <br/>
+          </Grid.Column>
+          <Grid.Column width={10}>
+            <Header as={'h2'} inverted>{this.props.professor.course}</Header>
+            <Header as={'h4'} inverted>{this.props.professor.description}</Header>
+            <Grid.Row>
+              <hr/>
+            </Grid.Row>
+            <Card fluid>
               <Card.Content>
-                <Card.Header>{this.props.professor.firstName} {this.props.professor.lastName}</Card.Header>
+                <Card.Header>Reviews</Card.Header>
               </Card.Content>
-              <Card.Content extra>
-                <Rating disabled icon='star' maxRating={5} defaultRating={rate}/>
+              <Card.Content>
+                <Feed>
+                  {arr.map((review, index) => <Review key={index} review={review}/>)}
+                </Feed>
               </Card.Content>
             </Card>
-            <AddReview contactId={this.props.professor._id}/>
           </Grid.Column>
-        </Grid.Column>
-        <Grid.Column width={2}>
-          <br/>
-        </Grid.Column>
-        <Grid.Column width={10}>
-          <Header as={'h2'} inverted>{this.props.professor.course}</Header>
-          <Header as={'h4'} inverted>{this.props.professor.description}</Header>
-          <Grid.Row>
-            <hr/>
-          </Grid.Row>
-          <Card fluid>
-            <Card.Content>
-              <Card.Header>Reviews</Card.Header>
-            </Card.Content>
-            <Card.Content>
-              <Feed>
-                {arr.map((review, index) => <Review key={index} review={review}/>)}
-              </Feed>
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-      </Grid>
+        </Grid>
+      </div>
     );
   }
 }

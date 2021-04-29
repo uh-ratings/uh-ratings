@@ -4,6 +4,7 @@ import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { homePage } from './home.page';
 import { eventPage } from './event.page';
+import { professorReviewPage } from './professorreview.page';
 
 /* global fixture:false, test:false */
 
@@ -34,7 +35,7 @@ test('Test that home page shows up after login', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test.only('Test that event page shows up without login', async (testController) => {
+test('Test that event page shows up without login', async (testController) => {
   await navBar.ensureLogout(testController);
   await navBar.gotoEventPage(testController);
   await eventPage.isDisplayed(testController);
@@ -48,4 +49,13 @@ test('Test that event page shows up after login', async (testController) => {
   await eventPage.isDisplayed(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
+});
+
+test.only('Test that professor review page is working', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await homePage.isDisplayed(testController);
+  await navBar.gotoProfessorReviewPage(testController);
+  await professorReviewPage.isDisplayed(testController);
 });
