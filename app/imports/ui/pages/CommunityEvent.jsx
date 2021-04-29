@@ -29,7 +29,7 @@ class CommunityEvent extends React.Component {
 
   render() {
     return (
-      <div className="uhmanoa-event-background">
+      <div className="uhmanoa-event-background" id="event-page">
         <Calendar
           localizer={localizer}
           defaultDate={new Date()}

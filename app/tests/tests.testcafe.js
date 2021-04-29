@@ -3,6 +3,7 @@ import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { homePage } from './home.page';
+import { eventPage } from './event.page';
 
 /* global fixture:false, test:false */
 
@@ -29,6 +30,22 @@ test('Test that home page shows up after login', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
   await homePage.isDisplayed(testController);
+  await navBar.logout(testController);
+  await signoutPage.isDisplayed(testController);
+});
+
+test.only('Test that event page shows up without login', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoEventPage(testController);
+  await eventPage.isDisplayed(testController);
+});
+
+test('Test that event page shows up after login', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoEventPage(testController);
+  await eventPage.isDisplayed(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
