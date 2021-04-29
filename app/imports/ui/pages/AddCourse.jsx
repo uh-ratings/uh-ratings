@@ -41,19 +41,19 @@ class AddCourse extends React.Component {
   render() {
     let fRef = null;
     return (
-      <div className='uhmanoa-addcourse-background'>
+      <div className='uhmanoa-addcourse-background' id='add-course'>
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" inverted>Add Course Review</Header>
             <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
-                <TextField name='name'>Course Name</TextField>
-                <TextField name='semester'/>
-                <TextField name='professor'/>
-                <LongTextField name='description'/>
-                <NumField name='cost' decimal={false}/>
-                <NumField name='averagetime' decimal={false}/>
-                <SubmitField value='Submit'/>
+                <TextField id='addcourse-name' name='name'>Course Name</TextField>
+                <TextField id='addcourse-semester' name='semester'/>
+                <TextField id='addcourse-professor' name='professor'/>
+                <LongTextField id='addcourse-description' name='description'/>
+                <NumField id='addcourse-cost' name='cost' decimal={false}/>
+                <NumField id='addcourse-time' name='averagetime' decimal={false}/>
+                <SubmitField id='addcourse-submit' value='Submit'/>
                 <ErrorsField/>
               </Segment>
             </AutoForm>
