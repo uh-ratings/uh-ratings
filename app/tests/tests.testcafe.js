@@ -3,11 +3,13 @@ import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { homePage } from './home.page';
+import { adminPage } from './admin.Page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
-const credentials = { username: 'john@foo.com', password: 'changeme' };
+const credentials = { username: 'admin@foo.com', password: 'changeme' };
+const credentials2 = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -31,4 +33,12 @@ test('Test that home page shows up after login', async (testController) => {
   await homePage.isDisplayed(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
+});
+
+test('Test that admin page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.gotoAdminPage(testController);
+  await adminPage.isDisplayed(testController);
+  await adminPage.admintrash(testController);
 });

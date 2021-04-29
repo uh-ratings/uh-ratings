@@ -19,9 +19,9 @@ class AdminPage extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container id="admin-page">
         <Header as="h2" textAlign="center" inverted>Professors</Header>
-        <Card.Group>
+        <Card.Group >
           {this.props.professors.map((professor, index) => <Admin key={index} professor={professor}/>)}
         </Card.Group>
         <hr></hr>
