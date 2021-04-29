@@ -4,7 +4,7 @@ import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
 import { homePage } from './home.page';
 import { eventPage } from './event.page';
-import { adminPage } from './admin.Page';
+import { adminPage } from './admin.page';
 
 /* global fixture:false, test:false */
 
