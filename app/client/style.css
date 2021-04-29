@@ -24,6 +24,42 @@
   position: relative;
 }
 
+.uhmanoa-professors-background {
+  background-image: url('images/post-building.jpg');
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.uhmanoa-listcourses-background {
+  background-image: url('images/hamilton.jpg');
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.uhmanoa-editposts-background {
+  background-image: url('images/campus.jpg');
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.uhmanoa-signin-background {
+  background-image: url('images/uhlawn.jpg');
+  height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .white-label {
   color: white !important;
 }
