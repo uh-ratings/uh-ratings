@@ -5,6 +5,7 @@ import { navBar } from './navbar.component';
 import { homePage } from './home.page';
 import { eventPage } from './event.page';
 import { addCoursePage } from './addcourse.page';
+import { adminPage } from './admin.page';
 
 /* global fixture:false, test:false */
 
@@ -53,9 +54,18 @@ test('Test that event page shows up after login', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
+
 test('Test the Add Course Review page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddcoursePage(testController);
   await addCoursePage.addCourse(testController, courseinfo.name, courseinfo.semester, courseinfo.professor, courseinfo.description, courseinfo.cost, courseinfo.averagetime);
+});
+
+test('Test that admin page shows up', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoAdminPage(testController);
+  await adminPage.isDisplayed(testController);
+  await adminPage.admintrash(testController);
 });
