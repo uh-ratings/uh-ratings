@@ -65,7 +65,7 @@ test('Test the Add Course Review page', async (testController) => {
   await addCoursePage.addCourse(testController, courseinfo.name, courseinfo.semester, courseinfo.professor, courseinfo.description, courseinfo.cost, courseinfo.averagetime);
 });
 
-test.only('Test the Add Professor Review page', async (testController) => {
+test('Test the Add Professor Review page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddprofessorPage(testController);
