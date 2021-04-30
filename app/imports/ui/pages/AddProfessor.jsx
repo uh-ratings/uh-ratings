@@ -41,23 +41,27 @@ class AddProfessor extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid container centered>
-        <Grid.Column>
-          <Header as="h2" textAlign="center" inverted>Add Professor Review</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
-              <TextField name='firstName'/>
-              <TextField name='lastName'/>
-              <TextField name='address'/>
-              <TextField name='image'/>
-              <LongTextField name='description'/>
-              <TextField name='course'/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
-      </Grid>
+      <div id='add-professor'>
+        <Grid container centered>
+          <Grid.Column>
+            <Header as="h2" textAlign="center" inverted>Add Professor Review</Header>
+            <AutoForm ref={ref => {
+              fRef = ref;
+            }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+              <Segment>
+                <TextField id='addprofessor-firstname' name='firstName'/>
+                <TextField id='addprofessor-lastname' name='lastName'/>
+                <TextField id='addprofessor-address' name='address'/>
+                <TextField id='addprofessor-image' name='image'/>
+                <LongTextField id='addprofessor-description' name='description'/>
+                <TextField id='addprofessor-course' name='course'/>
+                <SubmitField id='addprofessor-submit' value='Submit'/>
+                <ErrorsField/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }
