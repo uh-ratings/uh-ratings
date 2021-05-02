@@ -23,6 +23,11 @@ class AddProfessorPage {
     await testController.typeText('#addprofessor-course', course);
     await testController.click('#addprofessor-submit');
   }
+
+  async CheckAddprofessor(testController, name) {
+    const professornames = Selector('#professor-name').withExactText(name);
+    await testController.expect(professornames.exists).ok();
+  }
 }
 
 export const addProfessorPage = new AddProfessorPage();

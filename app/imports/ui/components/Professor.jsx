@@ -22,7 +22,7 @@ class Professor extends React.Component {
             size='mini'
             src={this.props.professor.image}
           />
-          <Card.Header>
+          <Card.Header id='professor-name'>
             <Link to={`/professor/${this.props.professor._id}`}>
               {this.props.professor.firstName} {this.props.professor.lastName}
             </Link>

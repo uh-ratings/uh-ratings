@@ -17,7 +17,7 @@ class Course extends React.Component {
     return (
       <Card centered>
         <Card.Content>
-          <Card.Header>
+          <Card.Header id='course-name'>
             <Link to={`/course/${this.props.course._id}`}>
               {this.props.course.name}
             </Link>

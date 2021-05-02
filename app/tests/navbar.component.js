@@ -45,8 +45,16 @@ class NavBar {
     await testController.click('#navbar-add-course');
   }
 
+  async gotoListcoursePage(testController) {
+    await testController.click('#navbar-list-course');
+  }
+
   async gotoAddprofessorPage(testController) {
     await testController.click('#navbar-add-professor');
+  }
+
+  async gotoListprofessorPage(testController) {
+    await testController.click('#navbar-list-professor');
   }
 
   /** Pull down login menu, go to sign up page. */

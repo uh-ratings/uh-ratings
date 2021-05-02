@@ -63,6 +63,9 @@ test('Test the Add Course Review page', async (testController) => {
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddcoursePage(testController);
   await addCoursePage.addCourse(testController, courseinfo.name, courseinfo.semester, courseinfo.professor, courseinfo.description, courseinfo.cost, courseinfo.averagetime);
+  await navBar.gotoListcoursePage(testController);
+  await navBar.gotoListcoursePage(testController);
+  await addCoursePage.CheckAddcourse(testController, courseinfo.name);
 });
 
 test('Test the Add Professor Review page', async (testController) => {
@@ -70,6 +73,9 @@ test('Test the Add Professor Review page', async (testController) => {
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddprofessorPage(testController);
   await addProfessorPage.addProfessor(testController, professorinfo.firstName, professorinfo.lastName, professorinfo.address, professorinfo.image, professorinfo.description, professorinfo.course);
+  await navBar.gotoListprofessorPage(testController);
+  await navBar.gotoListprofessorPage(testController);
+  await addProfessorPage.CheckAddprofessor(testController, `${professorinfo.firstName} ${professorinfo.lastName}`);
 });
 
 test('Test that admin page shows up', async (testController) => {

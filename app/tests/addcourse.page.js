@@ -23,6 +23,11 @@ class AddCoursePage {
     await testController.typeText('#addcourse-time', time);
     await testController.click('#addcourse-submit');
   }
+
+  async CheckAddcourse(testController, name) {
+    const coursenames = Selector('#course-name').withExactText(name);
+    await testController.expect(coursenames.exists).ok();
+  }
 }
 
 export const addCoursePage = new AddCoursePage();
