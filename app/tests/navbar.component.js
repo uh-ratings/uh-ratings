@@ -44,6 +44,27 @@ class NavBar {
     await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-up');
   }
+
+  async gotoAddcoursePage(testController) {
+    await testController.click('#navbar-add-course');
+  }
+
+  async gotoListcoursePage(testController) {
+    await testController.click('#navbar-list-course');
+  }
+
+  async gotoAddprofessorPage(testController) {
+    await testController.click('#navbar-add-professor');
+  }
+
+  async gotoListprofessorPage(testController) {
+    await testController.click('#navbar-list-professor');
+  }
+
+  /** Pull down login menu, go to sign up page. */
+  async gotoAdminPage(testController) {
+    await testController.click('#admin-list-page');
+  }
 }
 
 export const navBar = new NavBar();

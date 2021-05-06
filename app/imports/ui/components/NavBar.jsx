@@ -18,14 +18,14 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} activeClassName="active" exact to="/event" key='event' id="goto-event-page">Community Events</Menu.Item>
         {this.props.currentUser ? (
           [
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/listprofessor" key='listprofessor' id="prof-review-page">Professors</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/listcourse" key='listcourse'>Courses</Menu.Item>,
+            <Menu.Item as={NavLink} id='navbar-list-professor' activeClassName="active" exact to="/listprofessor" key='listprofessor'>Professors</Menu.Item>,
+            <Menu.Item as={NavLink} id='navbar-list-course' activeClassName="active" exact to="/listcourse" key='listcourse'>Courses</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/addcourse" key='addcourse'>Add Course Review</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/addprofessor" key='addprofessor'>Add Professor Review</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>]
+          [<Menu.Item as={NavLink} id='navbar-add-course' activeClassName="active" exact to="/addcourse" key='addcourse'>Add Course Review</Menu.Item>,
+            <Menu.Item as={NavLink} id='navbar-add-professor' activeClassName="active" exact to="/addprofessor" key='addprofessor'>Add Professor Review</Menu.Item>,
+            <Menu.Item id="admin-list-page" as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

@@ -18,7 +18,7 @@ class ListCourses extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <div className="uhmanoa-listcourses-background">
+      <div className="uhmanoa-listcourses-background" id='list-course'>
         <Container>
           <Header as="h2" textAlign="center" inverted>List Courses</Header>
           <Card.Group>
