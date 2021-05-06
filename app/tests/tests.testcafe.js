@@ -20,7 +20,8 @@ const courseinfo = { name: 'ICS 111', semester: 'Spring, Fall', professor: 'Scot
 const professorinfo = { firstName: 'Henri', lastName: 'Casanova', address: 'POST 307, University of Hawaii',
   image: 'https://avatars0.githubusercontent.com/u/7494478?s=460&v=4',
   description: 'I am originally from France. I maintain a list of reports from my surf sessions. I have proof that I ran the Hana relay with an actual Team.', course: 'ICS111, ICS211' };
-const coursereview = { review: 'Not too hard', rating: '5' };
+const coursereview = { review: 'Great', rating: '5' };
+const professorreview = { review: 'Great', rating: '5' };
 
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -103,6 +104,15 @@ test('Test the Add Professor page', async (testController) => {
   await navBar.gotoListprofessorPage(testController);
   await navBar.gotoListprofessorPage(testController);
   await addProfessorPage.CheckAddprofessor(testController, `${professorinfo.firstName} ${professorinfo.lastName}`);
+});
+
+test('Test the Add Professor Review page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoListcoursePage(testController);
+  await addCourseReviewPage.addCourseReview(testController, professorreview.review, professorreview.rating);
+  await navBar.gotoListcoursePage(testController);
+  await addCourseReviewPage.CheckAddcourseReview(testController, professorreview.review);
 });
 
 test('Test that admin page shows up', async (testController) => {

@@ -23,7 +23,7 @@ class Professor extends React.Component {
             src={this.props.professor.image}
           />
           <Card.Header id='professor-name'>
-            <Link to={`/professor/${this.props.professor._id}`}>
+            <Link id='addprofessorreview-temp' to={`/professor/${this.props.professor._id}`}>
               {this.props.professor.firstName} {this.props.professor.lastName}
             </Link>
           </Card.Header>

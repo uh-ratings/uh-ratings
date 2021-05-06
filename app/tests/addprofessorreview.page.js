@@ -1,9 +1,9 @@
 import { Selector } from 'testcafe';
 
-class AddCourseReviewPage {
+class AddProfessorReviewPage {
 
   constructor() {
-    this.pageId = '#add-course-review';
+    this.pageId = '#add-professor-review';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -13,17 +13,17 @@ class AddCourseReviewPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  async addCourseReview(testController, review, rating) {
-    await testController.click('#addcoursereview-temp');
+  async addProfessorReview(testController, review, rating) {
+    await testController.click('#addprofessorreview-temp');
     await testController.typeText('#addreview-rating', rating);
     await testController.typeText('#addreview-review', review);
     await testController.click('#addreview-submit');
   }
 
-  async CheckAddcourseReview(testController, review) {
-    const coursereview = Selector('#course-review').withExactText(review);
+  async CheckAddprofessorReview(testController, review) {
+    const coursereview = Selector('#professor-review').withExactText(review);
     await testController.expect(coursereview.exists).ok();
   }
 }
 
-export const addCourseReviewPage = new AddCourseReviewPage();
+export const addProfessorReviewPage = new AddProfessorReviewPage();
