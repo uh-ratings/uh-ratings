@@ -8,6 +8,7 @@ import { addCoursePage } from './addcourse.page';
 import { adminPage } from './admin.page';
 import { addProfessorPage } from './addprofessor.page';
 import { addCourseReviewPage } from './addcoursereview.page';
+import { listCoursePage } from './listcourse.page';
 
 /* global fixture:false, test:false */
 
@@ -58,6 +59,13 @@ test('Test that event page shows up after login', async (testController) => {
   await eventPage.isDisplayed(testController);
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
+});
+
+test('Test the list Course page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoListcoursePage(testController);
+  await listCoursePage.isDisplayed(testController, courseinfo.name);
 });
 
 test('Test the Add Course page', async (testController) => {
