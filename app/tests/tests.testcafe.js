@@ -7,6 +7,7 @@ import { eventPage } from './event.page';
 import { addCoursePage } from './addcourse.page';
 import { adminPage } from './admin.page';
 import { addProfessorPage } from './addprofessor.page';
+import { addCourseReviewPage } from './addcoursereview.page';
 
 /* global fixture:false, test:false */
 
@@ -17,6 +18,7 @@ const courseinfo = { name: 'ICS 111', semester: 'Spring, Fall', professor: 'Scot
 const professorinfo = { firstName: 'Henri', lastName: 'Casanova', address: 'POST 307, University of Hawaii',
   image: 'https://avatars0.githubusercontent.com/u/7494478?s=460&v=4',
   description: 'I am originally from France. I maintain a list of reports from my surf sessions. I have proof that I ran the Hana relay with an actual Team.', course: 'ICS111, ICS211' };
+const coursereview = { review: 'Not too hard', rating: '5' };
 
 fixture('meteor-application-template-react localhost test with default db')
   .page('http://localhost:3000');
@@ -58,7 +60,7 @@ test('Test that event page shows up after login', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test the Add Course Review page', async (testController) => {
+test('Test the Add Course page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddcoursePage(testController);
@@ -66,6 +68,15 @@ test('Test the Add Course Review page', async (testController) => {
   await navBar.gotoListcoursePage(testController);
   await navBar.gotoListcoursePage(testController);
   await addCoursePage.CheckAddcourse(testController, courseinfo.name);
+});
+
+test('Test the Add Course Review page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoListcoursePage(testController);
+  await addCourseReviewPage.addCourseReview(testController, coursereview.review, coursereview.rating);
+  await navBar.gotoListcoursePage(testController);
+  await addCourseReviewPage.CheckAddcourseReview(testController, coursereview.review);
 });
 
 test('Test the Add Professor Review page', async (testController) => {

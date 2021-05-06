@@ -10,7 +10,7 @@ class Review extends React.Component {
       <Feed.Event >
         <Feed.Content>
           <Feed.Date content={this.props.review.createdAt.toLocaleDateString('en-US')} />
-          <Feed.Summary>
+          <Feed.Summary id='course-review'>
             {this.props.review.review}
           </Feed.Summary>
           <Rating disabled icon='star' maxRating={5} defaultRating={this.props.review.rating}/>
