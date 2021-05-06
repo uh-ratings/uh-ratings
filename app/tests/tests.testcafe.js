@@ -9,6 +9,7 @@ import { adminPage } from './admin.page';
 import { addProfessorPage } from './addprofessor.page';
 import { addCourseReviewPage } from './addcoursereview.page';
 import { listCoursePage } from './listcourse.page';
+import { listProfessorPage } from './listprofessor.page';
 
 /* global fixture:false, test:false */
 
@@ -87,7 +88,14 @@ test('Test the Add Course Review page', async (testController) => {
   await addCourseReviewPage.CheckAddcourseReview(testController, coursereview.review);
 });
 
-test('Test the Add Professor Review page', async (testController) => {
+test('Test the list Professor page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.gotoListprofessorPage(testController);
+  await listProfessorPage.isDisplayed(testController, courseinfo.name);
+});
+
+test('Test the Add Professor page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.gotoAddprofessorPage(testController);
