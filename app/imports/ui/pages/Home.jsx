@@ -36,12 +36,6 @@ class Home extends React.Component {
             <Header as={'h4'} inverted>Find out recent events happening in the UH community.</Header>
           </Grid.Column>
 
-          <Grid.Column style={columnStyle} textAlign='center'>
-            <Icon size='big' name='filter' inverted/>
-            <Header as={'h3'} inverted>Filter</Header>
-            <Header as={'h4'} inverted>Filter courses and professors to find exactly what you&apos;re looking for.</Header>
-          </Grid.Column>
-
         </Grid>
       </div>
     );
